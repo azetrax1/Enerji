@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politikalar - Enerji Kodları™</title>
+    <meta name="description" content="Enerji Kodları™ gizlilik politikası, kullanım koşulları, iade politikası ve yasal uyarılar.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Politikalar - Enerji Kodları™">
+    <meta property="og:description" content="Enerji Kodları™ gizlilik politikası, kullanım koşulları ve yasal uyarılar.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF6B35;
+            --secondary-gold: #FFA500;
+            --dark-navy: #1A1F3A;
+            --electric-blue: #00D9FF;
+            --white: #FFFFFF;
+            --light-bg: #FAFAFA;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 31, 58, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: var(--dark-navy);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo .gold {
+            color: var(--secondary-gold);
+        }
+
+        .back-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #2D3748 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-orange) 0%, var(--secondary-gold) 100%);
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: var(--light-bg);
+            padding: 80px 0;
+        }
+
+        .policy-section {
+            background: var(--white);
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .policy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .policy-header {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-gold) 100%);
+            padding: 30px;
+            color: var(--white);
+        }
+
+        .policy-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .policy-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .policy-content {
+            padding: 40px;
+        }
+
+        .policy-content h3 {
+            color: var(--dark-navy);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 30px 0 15px;
+        }
+
+        .policy-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .policy-content p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .policy-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .policy-content li {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%);
+            border-left: 4px solid var(--primary-orange);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--dark-navy);
+        }
+
+        .contact-info {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .contact-info h4 {
+            color: var(--primary-orange);
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0F1419;
+            padding: 60px 0 30px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 20px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .policy-content {
+                padding: 30px 20px;
+            }
+
+            .policy-header {
+                padding: 25px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">ENERJİ KODLARI<span class="gold">™</span></a>
+                <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Politikalar ve Yasal Uyarılar</h1>
+                <p>Enerji Kodları™ ile ilgili tüm politikalar, koşullar ve yasal bilgiler</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <!-- Gizlilik Politikası -->
+            <div class="policy-section fade-in">
+                <div class="policy-header">
+                    <h2>🔒 Gizlilik Politikası</h2>
+                    <p>Kişisel verilerinizin korunması bizim için önemlidir</p>
+                </div>
+                <div class="policy-content">
+                    <h3>Toplanan Bilgiler</h3>
+                    <p>Enerji Kodları™ hizmetlerimizi kullanırken aşağıdaki bilgileri toplayabiliriz:</p>
+                    <ul>
+                        <li>Ad, soyad ve iletişim bilgileri</li>
+                        <li>E-posta adresi ve telefon numarası</li>
+                        <li>Ödeme bilgileri (güvenli ödeme sistemleri aracılığıyla)</li>
+                        <li>Web sitesi kullanım verileri ve çerezler</li>
+                        <li>Eğitim ilerleme verileri</li>
+                    </ul>
+
+                    <h3>Bilgilerin Kullanımı</h3>
+                    <p>Topladığımız bilgileri aşağıdaki amaçlarla kullanırız:</p>
+                    <ul>
+                        <li>Hizmetlerimizi sunmak ve geliştirmek</li>
+                        <li>Müşteri desteği sağlamak</li>
+                        <li>Eğitim içeriklerini kişiselleştirmek</li>
+                        <li>Yasal yükümlülüklerimizi yerine getirmek</li>
+                        <li>Güvenlik ve dolandırıcılık önleme</li>
+                    </ul>
+
+                    <h3>Bilgi Paylaşımı</h3>
+                    <p>Kişisel bilgilerinizi üçüncü taraflarla paylaşmayız, ancak aşağıdaki durumlar istisnadır:</p>
+                    <ul>
+                        <li>Yasal zorunluluklar</li>
+                        <li>Güvenlik ihlalleri</li>
+                        <li>Hizmet sağlayıcılarımız (güvenlik protokolleri ile)</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p>🔐 Tüm ödeme işlemleri SSL şifreleme ile korunmaktadır. Kredi kartı bilgileriniz güvenli ödeme sistemlerinde saklanır.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kullanım Koşulları -->
+            <div class="policy-section fade-in">
+                <div class="policy-header">
+                    <h2>📋 Kullanım Koşulları</h2>
+                    <p>Hizmetlerimizi kullanırken uymanız gereken kurallar</p>
+                </div>
+                <div class="policy-content">
+                    <h3>Hizmet Kullanımı</h3>
+                    <p>Enerji Kodları™ eğitim programına katılarak aşağıdaki koşulları kabul etmiş olursunuz:</p>
+                    <ul>
+                        <li>Eğitim içeriklerini sadece kişisel kullanım için kullanabilirsiniz</li>
+                        <li>İçerikleri üçüncü taraflarla paylaşamaz veya dağıtamazsınız</li>
+                        <li>Ticari amaçlı kullanım yasaktır</li>
+                        <li>Hesap bilgilerinizi güvenli tutmak sizin sorumluluğunuzdur</li>
+                    </ul>
+
+                    <h3>Yasaklanan Kullanımlar</h3>
+                    <p>Aşağıdaki faaliyetler kesinlikle yasaktır:</p>
+                    <ul>
+                        <li>İçerikleri kopyalama, dağıtma veya satma</li>
+                        <li>Hesap bilgilerini başkalarıyla paylaşma</li>
+                        <li>Otomatik sistemlerle içeriklere erişim</li>
+                        <li>Telif haklarını ihlal eden faaliyetler</li>
+                        <li>Zararlı yazılım kullanımı</li>
+                    </ul>
+
+                    <h3>Hesap Güvenliği</h3>
+                    <p>Hesabınızın güvenliği için:</p>
+                    <ul>
+                        <li>Güçlü şifreler kullanın</li>
+                        <li>Şifrenizi kimseyle paylaşmayın</li>
+                        <li>Şüpheli aktiviteleri derhal bildirin</li>
+                        <li>Hesabınızı düzenli olarak kontrol edin</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p>⚠️ Koşulları ihlal eden hesaplar uyarı verilmeksizin askıya alınabilir veya kapatılabilir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İade Politikası -->
+            <div class="policy-section fade-in">
+                <div class="policy-header">
+                    <h2>💰 İade ve Garanti Politikası</h2>
+                    <p>30 günlük para iade garantisi</p>
+                </div>
+                <div class="policy-content">
+                    <h3>Para İade Garantisi</h3>
+                    <p>Enerji Kodları™ programından memnun kalmazsanız, satın alma tarihinden itibaren 5 gün içinde tam para iadesi alabilirsiniz.</p>
+
+                    <h3>İade Koşulları</h3>
+                    <ul>
+                        <li>İade talebi 5 gün içinde yapılmalıdır</li>
+                        <li>İade talebi e-posta ile bildirilmelidir</li>
+                        <li>Hiçbir soru sorulmadan iade işlemi gerçekleştirilir</li>
+                        <li>İade işlemi 2-3 iş günü içinde tamamlanır</li>
+                        <li>İade orijinal ödeme yöntemi ile yapılır</li>
+                    </ul>
+
+                    <h3>İade Süreci</h3>
+                    <p>İade talebinde bulunmak için:</p>
+                    <ol>
+                        <li>E-posta adresinizden bize ulaşın</li>
+                        <li>Satın alma bilgilerinizi belirtin</li>
+                        <li>İade nedeninizi kısaca açıklayın</li>
+                        <li>İade işlemi otomatik olarak başlatılır</li>
+                    </ol>
+
+                    <h3>Garanti Kapsamı</h3>
+                    <p>Programımız aşağıdaki garantileri sunar:</p>
+                    <ul>
+                        <li>%300 enerji artışı garantisi</li>
+                        <li>5 günlük para iade garantisi</li>
+                        <li>7/24 müşteri desteği</li>
+                        <li>Ömür boyu erişim garantisi</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p>✅ Risk tamamen bizde! 5 gün içinde memnun kalmazsanız paranızı iade ediyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tıbbi Uyarı ve Sorumluluk Reddi -->
+            <div class="policy-section fade-in">
+                <div class="policy-header">
+                    <h2>⚕️ Tıbbi Uyarı ve Sorumluluk Reddi</h2>
+                    <p>Önemli sağlık uyarıları ve yasal sorumluluk sınırları</p>
+                </div>
+                <div class="policy-content">
+                    <h3>Tıbbi Tavsiye Değildir</h3>
+                    <p>Enerji Kodları™ programı bir eğitim ürünüdür ve tıbbi tavsiye değildir. Program içeriği:</p>
+                    <ul>
+                        <li>Genel sağlık ve yaşam tarzı önerileri içerir</li>
+                        <li>Bireysel tıbbi durumları dikkate almaz</li>
+                        <li>Profesyonel tıbbi tedavinin yerini tutmaz</li>
+                        <li>Sağlık sorunları için doktor konsültasyonu gerektirir</li>
+                    </ul>
+
+                    <h3>Doktor Konsültasyonu</h3>
+                    <p>Aşağıdaki durumlarda mutlaka doktorunuza danışın:</p>
+                    <ul>
+                        <li>Kronik sağlık sorunlarınız varsa</li>
+                        <li>İlaç kullanıyorsanız</li>
+                        <li>Hamileyseniz veya emziriyorsanız</li>
+                        <li>Yaşınız 65'in üzerindeyse</li>
+                        <li>Kalp, diyabet veya tansiyon sorunlarınız varsa</li>
+                    </ul>
+
+                    <h3>Sorumluluk Sınırları</h3>
+                    <p>Enerji Kodları™ programı kullanımından doğabilecek:</p>
+                    <ul>
+                        <li>Sağlık sorunlarından sorumlu değiliz</li>
+                        <li>Bireysel sonuçlar garanti edilmez</li>
+                        <li>Yan etkilerden sorumlu değiliz</li>
+                        <li>Mali kayıplardan sorumlu değiliz</li>
+                    </ul>
+
+                    <h3>Kullanım Önerileri</h3>
+                    <p>Programı güvenli kullanmak için:</p>
+                    <ul>
+                        <li>Vücudunuzu dinleyin ve aşırıya kaçmayın</li>
+                        <li>Rahatlamayan durumlarda durun</li>
+                        <li>Düzenli sağlık kontrollerinizi yaptırın</li>
+                        <li>Beslenme değişikliklerini yavaş yavaş uygulayın</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p>⚠️ Bu program eğitim amaçlıdır. Ciddi sağlık sorunlarınız için mutlaka doktorunuza danışın!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fikri Mülkiyet Hakları -->
+            <div class="policy-section fade-in">
+                <div class="policy-header">
+                    <h2>©️ Fikri Mülkiyet Hakları</h2>
+                    <p>Telif hakları ve kullanım izinleri</p>
+                </div>
+                <div class="policy-content">
+                    <h3>Telif Hakları</h3>
+                    <p>Enerji Kodları™ programının tüm içerikleri telif hakkı ile korunmaktadır:</p>
+                    <ul>
+                        <li>Metin, görsel ve video içerikler</li>
+                        <li>Eğitim materyalleri ve kılavuzlar</li>
+                        <li>Yazılım ve uygulamalar</li>
+                        <li>Marka ve logo tasarımları</li>
+                    </ul>
+
+                    <h3>Kullanım İzinleri</h3>
+                    <p>İçerikleri aşağıdaki şekillerde kullanabilirsiniz:</p>
+                    <ul>
+                        <li>Kişisel eğitim amaçlı kullanım</li>
+                        <li>Kendi notlarınızı tutma</li>
+                        <li>Aile üyelerinizle paylaşma</li>
+                        <li>Kişisel gelişim projelerinizde kullanma</li>
+                    </ul>
+
+                    <h3>Yasaklanan Kullanımlar</h3>
+                    <p>Aşağıdaki faaliyetler yasaktır:</p>
+                    <ul>
+                        <li>İçerikleri kopyalama ve dağıtma</li>
+                        <li>Ticari amaçlı kullanım</li>
+                        <li>Başka eğitim programlarında kullanma</li>
+                        <li>İnternet ortamında paylaşma</li>
+                        <li>Değiştirme ve uyarlama</li>
+                    </ul>
+
+                    <h3>İhlal Durumları</h3>
+                    <p>Telif hakkı ihlali durumunda:</p>
+                    <ul>
+                        <li>Yasal işlem başlatılabilir</li>
+                        <li>Mali tazminat talep edilebilir</li>
+                        <li>Hesap erişimi kısıtlanabilir</li>
+                        <li>İçerik kaldırma talebi yapılabilir</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p>📚 Tüm içerikler orijinaldir ve özenle hazırlanmıştır. Lütfen telif haklarına saygı gösterin.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İletişim Bilgileri -->
+            <div class="policy-section fade-in">
+                <div class="policy-header">
+                    <h2>📞 İletişim Bilgileri</h2>
+                    <p>Bizimle iletişime geçin</p>
+                </div>
+                <div class="policy-content">
+                    <div class="contact-info">
+                        <h4>📧 E-posta Desteği</h4>
+                        <p>Genel sorular: info@enerjikodlari.com</p>
+                        <p>Teknik destek: destek@enerjikodlari.com</p>
+                        <p>İade talepleri: iade@enerjikodlari.com</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <h4>⏰ Çalışma Saatleri</h4>
+                        <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                        <p>Cumartesi: 10:00 - 16:00</p>
+                        <p>Pazar: Kapalı</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <h4>📱 WhatsApp Destek</h4>
+                        <p>7/24 WhatsApp desteği</p>
+                        <p>Hızlı yanıt için WhatsApp kullanın</p>
+                    </div>
+
+                    <h3>Yanıt Süreleri</h3>
+                    <ul>
+                        <li>E-posta: 24 saat içinde</li>
+                        <li>WhatsApp: 2 saat içinde</li>
+                        <li>Acil durumlar: 1 saat içinde</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ENERJİ KODLARI<span class="gold">™</span></div>
+                <div class="footer-links">
+                    <a href="index.html">Ana Sayfa</a>
+                    <a href="politikalar.html">Politikalar</a>
+                    <a href="odeme.html">Ödeme</a>
+                </div>
+                <p>© 2025 Enerji Kodlari™ - Tüm hakları saklıdır</p>
+                <div class="footer-disclaimer">
+                    Bu eğitim ürünüdür, tıbbi tavsiye değildir. Ciddi sağlık sorunlarınız için doktorunuza danışın.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
